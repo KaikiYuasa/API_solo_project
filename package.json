@@ -13,6 +13,7 @@
     "build": "tsc -p .",
     "lint": "eslint ./src/**/*.ts --fix",
     "test": "mocha --inspect -r ts-node/register -r dotenv/config src/tests/index.ts",
+    "mochatest": "mocha",
     "orm": "ts-node -r dotenv/config ./node_modules/typeorm/cli.js --config src/ormconfig.ts",
     "makeMigrations": "yarn orm migration:generate",
     "migrate": "yarn orm migration:run",

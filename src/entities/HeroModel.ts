@@ -12,13 +12,13 @@ export class Hero extends BaseEntity {
   public gender: string = ''
 
   @Column({ nullable: true })
-  public eyeColor: string = ''
+  public eyecolor: string = ''
 
   @Column({ nullable: true })
   public race: string = ''
 
   @Column({ nullable: true })
-  public hairColor: string = ''
+  public haircolor: string = ''
 
   @Column("float", { nullable: true })
   public height: number = 0
@@ -27,7 +27,7 @@ export class Hero extends BaseEntity {
   public publisher: string = ''
 
   @Column({ nullable: true })
-  public skinColor: string = ''
+  public skincolor: string = ''
 
   @Column({ nullable: true })
   public alignment: string = ''

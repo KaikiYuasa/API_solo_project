@@ -2,11 +2,28 @@ const express = require("express");
 const app = express.Router();
 import Hero from '../entities/HeroModel'
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.get('/', async (req, res) => {
-    const hero = new Hero()
     const heros = await Hero.find()
     res.send(heros)
 })
+
+app.get('/:input', async (req, res) => {
+    let hero;
+    const input = parseInt(req.params.input);
+    if(isNaN(input)){
+        hero = await Hero.findOne({"name": req.params.input});
+    } else {
+        hero = await Hero.findOne({"id": req.params.input});      
+    }
+    res.send(hero)
+})
+
 
 app.post('/', async (req, res) => {
     const hero = new Hero();

@@ -1,3 +1,5 @@
+このリポジトリはCode Chrysalisの生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）
+
 # API_solo_project
 
 ## GET /api/hero
@@ -7,6 +9,20 @@
 
 ### URLパラメーター
 - なし
+
+### リクエスト
+- なし
+
+### レスポンス
+- 200
+
+## GET /api/hero/:input
+
+### 処理概要
+- 指定したヒーローのデータを取得します。
+
+### URLパラメーター
+- input: idかnameで指定します。
 
 ### リクエスト
 - なし

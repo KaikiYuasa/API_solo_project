@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  title: Hero information API
+  version: 1.0
+paths:
+  '/api/hero':
+    get:
+      summary: Get all hero data API
+      responses:
+        '200':
+          description: ok
+    post:
+      summary: Post hero data API
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                gender:
+                  type: string
+                eyecolor:
+                  type: string
+                race:
+                  type: string
+                haircolor:
+                  type: string
+                height:
+                  type: number
+                publisher:
+                  type: string
+                skincolor:
+                  type: string
+                alignment:
+                  type: string
+                weight:
+                  type: number
+      responses:
+        '200':
+          description: ok    
+  '/api/hero/{input}':
+    get:
+      summary: Get selected hero data API
+      parameters:
+        - in: path
+          name: input
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok      
+    delete:
+      summary: Delete selected hero data API
+      parameters:
+        - in: path
+          name: input
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok        
+    patch:
+      summary: Patch selected hero data API
+      parameters:
+        - in: path
+          name: input
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                gender:
+                  type: string
+                eyecolor:
+                  type: string
+                race:
+                  type: string
+                haircolor:
+                  type: string
+                height:
+                  type: number
+                publisher:
+                  type: string
+                skincolor:
+                  type: string
+                alignment:
+                  type: string
+                weight:
+                  type: number
+      responses:
+        '200':
+          description: ok   

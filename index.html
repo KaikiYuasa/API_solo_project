@@ -6,15 +6,28 @@
     <script src="requestApi.js"></script>
   </head>
   <body>
+    <font size="10">Hero information API</font> 
         <form name = "form">
-            リクエストURL：https://localhost:3001/api/
+            Request:
+            <dev class="url">
+                <select name="typeSelect">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                    <option value="PATCH">PATCH</option>
+                    <option value="DELETE">DELETE</option>
+                </select>
+                https://localhost:3001/api/
             <input type="text" name="input1">
             <button type="button" name="button1" value="aaa" onClick="return display();">
                 search
             </button>
+            </dev>
+            <br>
+                Body:
+                <textarea name="input2" cols="10" rows="3"></textarea>
         </form>
 
-        レスポンス：
+        Response：
     <div class="scroll">
         
         <pre><span id="span1"></span></pre>

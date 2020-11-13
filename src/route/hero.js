@@ -24,17 +24,22 @@ app.post('/', async (req, res) => {
 
     await hero.save();
     const heros = await Hero.find();
+    res.status(201).send(heros);
+})
+
+app.patch('/:id', async (req, res) => {
+    const hero = await Hero.findOne({id: req.params.id});
+    for (let key in req.body){
+        hero[key] = req.body[key];
+    }
+    await hero.save();
+    const heros = await Hero.find();
     res.send(heros);
 })
 
-app.patch('/', async (req, res) => {
-    const hero = await Hero.findOne({id: req.body.id});
-    for (let key in req.body){
-        if(key != "id"){
-            hero[key] = req.body[key];
-        }
-    }
-    await hero.save();
+app.delete('/:id', async (req, res) => {
+    const hero = await Hero.findOne({id: req.params.id});
+    await hero.remove();
     const heros = await Hero.find();
     res.send(heros);
 })
